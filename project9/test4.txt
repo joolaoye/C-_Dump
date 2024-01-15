@@ -1,0 +1,17 @@
+Build Employee Database:
+
+    * The program asks the user to enter an employee’s ID, hours worked and hourly pay rate. 
+
+    * The program calculates the gross wage for that employee by computing the product of hours worked and hourly pay.
+
+    * The program stores this information in arrays and writes it to an output file.
+
+    * The program asks the user if they want to calculate the gross wage for another employee. 
+      - It only responds to input ‘y’ or ‘n’. 
+
+    * If the user enters 'n', the program displays instructions on how to access the.
+      - file containing the employee data and then proceeds to the next section of the program.
+
+    * Else if user enters ‘y’, the program repeats the steps 1 through 4.
+
+    * Else the program exits abruptly.
