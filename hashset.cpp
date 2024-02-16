@@ -180,22 +180,21 @@ public:
         this->listSize = 0;
     }
 
-    HashSet(T array[], int size) : HashSet()
+    HashSet(T* array) : HashSet()
     {
+
+        int size = sizeof(array) / sizeof(array[0]);
 
         for (int i = 0; i < size; i++)
         {
-
             int key = this->getHash(array[i]);
 
             if (this->objectList[key] == nullptr) {
                 this->objectList[key] = new LinkedList<T>();
             }
 
-            this->objectList[key]->add(array[i]);
+            this->add(array[i]);
         }
-
-        this->listSize += size;
 
     }
 
@@ -239,6 +238,24 @@ public:
             std::cout << "Element not in set" << std::endl;
             return;
         }
+    }
+
+    bool contains(T item) {
+        if (this->listSize < 1) {
+            return false;
+        }
+
+        int key = this->getHash(item);
+
+        if (this->objectList[key] == nullptr) {
+            return false;
+        }
+
+        if (!(this->objectList[key]->contains(item))) {
+            return false;
+        }
+
+        return true;
     }
 
     int getSize() const
